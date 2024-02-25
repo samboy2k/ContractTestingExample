@@ -1,0 +1,24 @@
+[
+    {
+        \"ApplicationID\": 123,
+        \"ReferenceID\": \"00012390345\",
+        \"Decision\": \"Decline\",
+        \"Score\": 300,
+        \"PolicyReasonCodes\": [
+            \"D200\",
+            \"R457\",
+            \"R320\"
+        ]
+    },
+    {
+        \"ApplicationID\": 122,
+        \"ReferenceID\": \"00012390346\",
+        \"Decision\": \"Refer\",
+        \"Score\": 250,
+        \"PolicyReasonCodes\": [
+            \"R210\",
+            \"R457\",
+            \"R320\"
+        ]
+    }
+]

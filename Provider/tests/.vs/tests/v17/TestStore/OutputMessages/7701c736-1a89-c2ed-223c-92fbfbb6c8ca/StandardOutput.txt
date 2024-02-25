@@ -1,0 +1,87 @@
+Starting verification...
+Pact verification failed
+
+Verifier Output
+---------------
+
+Verifying a pact between Consumer and Provider
+
+  A invalid GET request for Date Validation with invalid date parameter
+     Given There is data
+    returns a response which
+      has status code 200 (OK)
+      includes headers
+        "Content-Type" with value "text/plain; charset=utf-8" (OK)
+      has a matching body (FAILED)
+
+
+Failures:
+
+1) Verifying a pact between Consumer and Provider Given There is data - A invalid GET request for Date Validation with invalid date parameter
+    1.1) has a matching body
+           $ -> Expected text 'Some(b"{\"message\":\"Hello World!!\"}")' but received 'Some(b"Hello World!!")'
+
+There were 1 pact failures
+
+Verifier Logs
+-------------
+2024-02-23T00:59:02.026820Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier: Executing provider states
+2024-02-23T00:59:02.026891Z  INFO ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier: Running setup provider state change handler 'There is data' for 'A invalid GET request for Date Validation with invalid date parameter'
+2024-02-23T00:59:02.035796Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: Sending HTTP Request ( method: POST, path: /, query: None, headers: Some({"Content-Type": ["application/json"]}), body: Present(54 bytes, application/json) ) to state change handler
+2024-02-23T00:59:02.036130Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: reqwest::connect: starting new connection: http://localhost:9001/    
+2024-02-23T00:59:02.050171Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: hyper::client::connect::http: connecting to [::1]:9001
+2024-02-23T00:59:02.059918Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: hyper::client::connect::http: connected to [::1]:9001
+2024-02-23T00:59:02.106825Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: hyper::client::pool: pooling idle connection for ("http", localhost:9001)
+2024-02-23T00:59:02.106926Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: State change request: Response { url: Url { scheme: "http", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("localhost")), port: Some(9001), path: "/provider-states", query: None, fragment: None }, status: 200, headers: {"date": "Fri, 23 Feb 2024 00:59:01 GMT", "server": "Kestrel", "transfer-encoding": "chunked"} }
+2024-02-23T00:59:02.107164Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier: State Change: "ProviderState { name: "There is data", params: {} }" -> Ok({})
+2024-02-23T00:59:02.107188Z  INFO ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier: Running provider verification for 'A invalid GET request for Date Validation with invalid date parameter'
+2024-02-23T00:59:02.107245Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier: Verifying a HTTP interaction
+2024-02-23T00:59:02.107290Z  INFO ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: Sending request to provider at https://localhost:44377/
+2024-02-23T00:59:02.107292Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: Provider details = ProviderInfo { name: "Provider", protocol: "https", host: "localhost", port: Some(44377), path: "/", transports: [ProviderTransport { transport: "https", port: Some(44377), path: Some("/"), scheme: None }] }
+2024-02-23T00:59:02.107317Z  INFO ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: Sending request HTTP Request ( method: GET, path: /api/Hello, query: None, headers: None, body: Missing )
+2024-02-23T00:59:02.107322Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: body:
+
+2024-02-23T00:59:02.107375Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: reqwest::connect: starting new connection: https://localhost:44377/    
+2024-02-23T00:59:02.107940Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: hyper::client::connect::http: connecting to [::1]:44377
+2024-02-23T00:59:02.108653Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: hyper::client::connect::http: connected to [::1]:44377
+2024-02-23T00:59:02.108705Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: rustls::client::hs: No cached session for DnsName(DnsName(DnsName("localhost")))    
+2024-02-23T00:59:02.108901Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: rustls::client::hs: Not resuming any session    
+2024-02-23T00:59:02.111925Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: rustls::client::hs: Using ciphersuite TLS13_AES_256_GCM_SHA384    
+2024-02-23T00:59:02.111979Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: rustls::client::tls13: Not resuming    
+2024-02-23T00:59:02.112244Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: rustls::client::tls13: TLS1.3 encrypted extensions: [Protocols([6832])]    
+2024-02-23T00:59:02.112265Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: rustls::client::hs: ALPN protocol is Some(b"h2")    
+2024-02-23T00:59:02.112651Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: h2::client: binding client connection
+2024-02-23T00:59:02.112736Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: h2::client: client connection bound
+2024-02-23T00:59:02.112778Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: h2::codec::framed_write: send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384 }
+2024-02-23T00:59:02.113042Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: hyper::client::pool: pooling idle connection for ("https", localhost:44377)
+2024-02-23T00:59:02.131415Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: Received native response: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("localhost")), port: Some(44377), path: "/api/Hello", query: None, fragment: None }, status: 200, headers: {"content-type": "text/plain; charset=utf-8", "date": "Fri, 23 Feb 2024 00:59:02 GMT", "vary": "Accept-Encoding", "server": "Microsoft-IIS/10.0", "x-powered-by": "ASP.NET"} }
+2024-02-23T00:59:02.131608Z  INFO ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: Received response: HTTP Response ( status: 200, headers: Some({"date": ["Fri", "23 Feb 2024 00:59:02 GMT"], "server": ["Microsoft-IIS/10.0"], "content-type": ["text/plain; charset=utf-8"], "vary": ["Accept-Encoding"], "x-powered-by": ["ASP.NET"]}), body: Present(13 bytes, text/plain;charset=utf-8) )
+2024-02-23T00:59:02.131624Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_verifier::provider_client: body:
+Hello World!!
+2024-02-23T00:59:02.131657Z  INFO ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_matching: comparing to expected response: HTTP Response ( status: 200, headers: Some({"Content-Type": ["text/plain; charset=utf-8"]}), body: Present(27 bytes) )
+2024-02-23T00:59:02.131733Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_matching: expected content type = 'text/plain;charset=utf-8', actual content type = 'text/plain;charset=utf-8'
+2024-02-23T00:59:02.132391Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_matching: content type header matcher = 'RuleList { rules: [], rule_logic: And, cascaded: false }'
+2024-02-23T00:59:02.132427Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_plugin_driver::catalogue_manager: Looking for a content matcher for text/plain;charset=utf-8
+2024-02-23T00:59:02.133038Z DEBUG ThreadId(01) verify_interaction{interaction="A invalid GET request for Date Validation with invalid date parameter"}: pact_matching: Using content matcher core/content-matcher/text for content type 'text/plain;charset=utf-8'
+2024-02-23T00:59:02.133760Z  WARN ThreadId(01) pact_matching::metrics: 
+
+Please note:
+We are tracking events anonymously to gather important usage statistics like Pact version and operating system. To disable tracking, set the 'PACT_DO_NOT_TRACK' environment variable to 'true'.
+
+
+2024-02-23T00:59:02.133798Z DEBUG ThreadId(01) pact_matching::metrics: Sending event to GA - {"ev": "1", "ds": "client", "an": "pact-net", "cd3": "windows-x86_64", "av": "4.5.0.0", "aid": "pact-net", "cd6": "pact_ffi", "el": "Pacts verified", "ea": "Completed", "v": "1", "tid": "UA-117778936-1", "aip": "true", "ec": "ProviderTest", "cd7": "1.0.4", "cid": "6426e9c7e752fac01eda409b2be712ef", "t": "event", "cd2": "unknown"}
+2024-02-23T00:59:02.142809Z DEBUG ThreadId(01) reqwest::connect: starting new connection: https://www.google-analytics.com/    
+2024-02-23T00:59:02.162582Z DEBUG ThreadId(01) hyper::client::connect::http: connecting to 172.217.167.110:443
+2024-02-23T00:59:02.170857Z DEBUG ThreadId(01) hyper::client::connect::http: connected to 172.217.167.110:443
+2024-02-23T00:59:02.170894Z DEBUG ThreadId(01) rustls::client::hs: No cached session for DnsName(DnsName(DnsName("www.google-analytics.com")))    
+2024-02-23T00:59:02.170959Z DEBUG ThreadId(01) rustls::client::hs: Not resuming any session    
+2024-02-23T00:59:02.281505Z DEBUG ThreadId(01) rustls::client::hs: Using ciphersuite TLS13_AES_256_GCM_SHA384    
+2024-02-23T00:59:02.281523Z DEBUG ThreadId(01) rustls::client::tls13: Not resuming    
+2024-02-23T00:59:02.281749Z DEBUG ThreadId(01) rustls::client::tls13: TLS1.3 encrypted extensions: [Protocols([6832])]    
+2024-02-23T00:59:02.281757Z DEBUG ThreadId(01) rustls::client::hs: ALPN protocol is Some(b"h2")    
+2024-02-23T00:59:02.282416Z DEBUG ThreadId(01) h2::client: binding client connection
+2024-02-23T00:59:02.282459Z DEBUG ThreadId(01) h2::client: client connection bound
+2024-02-23T00:59:02.282466Z DEBUG ThreadId(01) h2::codec::framed_write: send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384 }
+2024-02-23T00:59:02.282721Z DEBUG ThreadId(01) hyper::client::pool: pooling idle connection for ("https", www.google-analytics.com)
+2024-02-23T00:59:02.396647Z DEBUG ThreadId(01) pact_plugin_driver::plugin_manager: Shutting down all plugins
+

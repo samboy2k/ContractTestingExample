@@ -1,0 +1,15 @@
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\bin\Debug\net6.0\consumer.exe
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\bin\Debug\net6.0\consumer.deps.json
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\bin\Debug\net6.0\consumer.runtimeconfig.json
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\bin\Debug\net6.0\consumer.dll
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\bin\Debug\net6.0\consumer.pdb
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\consumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\consumer.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\consumer.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\consumer.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\consumer.sourcelink.json
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\consumer.dll
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\refint\consumer.dll
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\consumer.pdb
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\consumer.genruntimeconfig.cache
+C:\Users\LENOVO\Documents\GitHub\pact-workshop-dotnet-core-v1-copy2\CompletedSolution\Consumer\src\obj\Debug\net6.0\ref\consumer.dll

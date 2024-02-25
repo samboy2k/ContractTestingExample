@@ -1,0 +1,165 @@
+Starting verification...
+Pact verification successful
+
+Verifier Output
+---------------
+
+Verifying a pact between Consumer and Provider
+
+  A GET Request for CreditDecision
+    returns a response which
+      has status code 200 (OK)
+      includes headers
+        "Content-Type" with value "application/json; charset=utf-8" (OK)
+      has a matching body (OK)
+
+  A GET Request for CreditDecision
+     Given There is data
+    returns a response which
+      has status code 200 (OK)
+      includes headers
+        "Content-Type" with value "application/json; charset=utf-8" (OK)
+      has a matching body (OK)
+
+
+Verifier Logs
+-------------
+2024-02-24T11:48:20.712314Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: Executing provider states
+2024-02-24T11:48:20.712706Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: Running setup provider state change handler with empty state for 'A GET Request for CreditDecision'
+2024-02-24T11:48:20.722535Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Sending HTTP Request ( method: POST, path: /, query: None, headers: Some({"Content-Type": ["application/json"]}), body: Present(41 bytes, application/json) ) to state change handler
+2024-02-24T11:48:20.727454Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: reqwest::connect: starting new connection: http://localhost:9001/    
+2024-02-24T11:48:20.743576Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::connect::http: connecting to [::1]:9001
+2024-02-24T11:48:20.752874Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::connect::http: connected to [::1]:9001
+2024-02-24T11:48:20.791350Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: State change request: Response { url: Url { scheme: "http", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("localhost")), port: Some(9001), path: "/provider-states", query: None, fragment: None }, status: 200, headers: {"date": "Sat, 24 Feb 2024 11:48:20 GMT", "server": "Kestrel", "transfer-encoding": "chunked"} }
+2024-02-24T11:48:20.792490Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: State Change: "ProviderState { name: "", params: {} }" -> Ok({})
+2024-02-24T11:48:20.792669Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: Running provider verification for 'A GET Request for CreditDecision'
+2024-02-24T11:48:20.793070Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: Verifying a HTTP interaction
+2024-02-24T11:48:20.793598Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Sending request to provider at https://localhost:44377/
+2024-02-24T11:48:20.793604Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Provider details = ProviderInfo { name: "Provider", protocol: "https", host: "localhost", port: Some(44377), path: "/", transports: [ProviderTransport { transport: "https", port: Some(44377), path: Some("/"), scheme: None }] }
+2024-02-24T11:48:20.793945Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Sending request HTTP Request ( method: GET, path: /CreditDecision, query: None, headers: None, body: Missing )
+2024-02-24T11:48:20.793951Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: body:
+
+2024-02-24T11:48:20.794178Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: reqwest::connect: starting new connection: https://localhost:44377/    
+2024-02-24T11:48:20.795018Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::connect::http: connecting to [::1]:44377
+2024-02-24T11:48:20.795721Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::connect::http: connected to [::1]:44377
+2024-02-24T11:48:20.796447Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::hs: No cached session for DnsName(DnsName(DnsName("localhost")))    
+2024-02-24T11:48:20.798488Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::hs: Not resuming any session    
+2024-02-24T11:48:20.810036Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::hs: Using ciphersuite TLS13_AES_256_GCM_SHA384    
+2024-02-24T11:48:20.810526Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::tls13: Not resuming    
+2024-02-24T11:48:20.811817Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::tls13: TLS1.3 encrypted extensions: [Protocols([6832])]    
+2024-02-24T11:48:20.812097Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::hs: ALPN protocol is Some(b"h2")    
+2024-02-24T11:48:20.814061Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: h2::client: binding client connection
+2024-02-24T11:48:20.814171Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: h2::client: client connection bound
+2024-02-24T11:48:20.815553Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: h2::codec::framed_write: send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384 }
+2024-02-24T11:48:20.817211Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::pool: pooling idle connection for ("https", localhost:44377)
+2024-02-24T11:48:21.081940Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Received native response: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("localhost")), port: Some(44377), path: "/CreditDecision", query: None, fragment: None }, status: 200, headers: {"content-length": "90", "content-type": "application/json; charset=utf-8", "server": "Microsoft-IIS/10.0", "x-powered-by": "ASP.NET", "date": "Sat, 24 Feb 2024 11:48:21 GMT"} }
+2024-02-24T11:48:21.083011Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Received response: HTTP Response ( status: 200, headers: Some({"content-length": ["90"], "content-type": ["application/json; charset=utf-8"], "server": ["Microsoft-IIS/10.0"], "date": ["Sat", "24 Feb 2024 11:48:21 GMT"], "x-powered-by": ["ASP.NET"]}), body: Present(90 bytes, application/json;charset=utf-8) )
+2024-02-24T11:48:21.083028Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: body:
+[{"date":"2024-02-25T22:48:20.8506994+11:00","applicationScore":300,"decision":"Decline"}]
+2024-02-24T11:48:21.083523Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: comparing to expected response: HTTP Response ( status: 200, headers: Some({"Content-Type": ["application/json; charset=utf-8"]}), body: Present(90 bytes) )
+2024-02-24T11:48:21.085401Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: expected content type = 'application/json;charset=utf-8', actual content type = 'application/json;charset=utf-8'
+2024-02-24T11:48:21.090410Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: content type header matcher = 'RuleList { rules: [], rule_logic: And, cascaded: false }'
+2024-02-24T11:48:21.091004Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_plugin_driver::catalogue_manager: Looking for a content matcher for application/json;charset=utf-8
+2024-02-24T11:48:21.091830Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: No content matcher defined for content type 'application/json;charset=utf-8', using core matcher implementation
+2024-02-24T11:48:21.092193Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: Using body matcher for content type 'application/json;charset=utf-8'
+2024-02-24T11:48:21.092600Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $
+2024-02-24T11:48:21.092822Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_lists: matcher defined for path '$'
+2024-02-24T11:48:21.092990Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::matchingrules: slice -> slice: comparing [serde_json::value::Value] to [serde_json::value::Value] using Type
+2024-02-24T11:48:21.093010Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::matchingrules: Comparing '[Object {"applicationScore": Number(320), "date": String("2024-02-25T08:44:54.7438282+11:00"), "decision": String("Approve")}]' to '[Object {"applicationScore": Number(300), "date": String("2024-02-25T22:48:20.8506994+11:00"), "decision": String("Decline")}]' using Type -> Ok(())
+2024-02-24T11:48:21.093044Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::matchingrules: Comparing list item 0 with value 'Some(Object {"applicationScore": Number(300), "date": String("2024-02-25T22:48:20.8506994+11:00"), "decision": String("Decline")})' to 'Object {"applicationScore": Number(320), "date": String("2024-02-25T08:44:54.7438282+11:00"), "decision": String("Approve")}'
+2024-02-24T11:48:21.093056Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $[0]
+2024-02-24T11:48:21.093059Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_maps: Comparing maps at $[0]: {"applicationScore": Number(320), "date": String("2024-02-25T08:44:54.7438282+11:00"), "decision": String("Approve")} -> {"applicationScore": Number(300), "date": String("2024-02-25T22:48:20.8506994+11:00"), "decision": String("Decline")}
+2024-02-24T11:48:21.093087Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_maps: Matcher is defined for path $[0]
+2024-02-24T11:48:21.093295Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $[0].applicationScore
+2024-02-24T11:48:21.093307Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Calling match_values for path $[0].applicationScore
+2024-02-24T11:48:21.093321Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: JSON -> JSON: Comparing '320' to '300' using Type -> Ok(())
+2024-02-24T11:48:21.093530Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Comparing 'Number(320)' to 'Number(300)' at path '$[0].applicationScore' -> Ok(())
+2024-02-24T11:48:21.093539Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $[0].date
+2024-02-24T11:48:21.093549Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Calling match_values for path $[0].date
+2024-02-24T11:48:21.093553Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: JSON -> JSON: Comparing '"2024-02-25T08:44:54.7438282+11:00"' to '"2024-02-25T22:48:20.8506994+11:00"' using Type -> Ok(())
+2024-02-24T11:48:21.093556Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Comparing 'String("2024-02-25T08:44:54.7438282+11:00")' to 'String("2024-02-25T22:48:20.8506994+11:00")' at path '$[0].date' -> Ok(())
+2024-02-24T11:48:21.093613Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $[0].decision
+2024-02-24T11:48:21.093619Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Calling match_values for path $[0].decision
+2024-02-24T11:48:21.093623Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: JSON -> JSON: Comparing '"Approve"' to '"Decline"' using Type -> Ok(())
+2024-02-24T11:48:21.093626Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Comparing 'String("Approve")' to 'String("Decline")' at path '$[0].decision' -> Ok(())
+2024-02-24T11:48:21.101920Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: Executing provider states
+2024-02-24T11:48:21.101938Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: Running setup provider state change handler 'There is data' for 'A GET Request for CreditDecision'
+2024-02-24T11:48:21.108671Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Sending HTTP Request ( method: POST, path: /, query: None, headers: Some({"Content-Type": ["application/json"]}), body: Present(54 bytes, application/json) ) to state change handler
+2024-02-24T11:48:21.108723Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: reqwest::connect: starting new connection: http://localhost:9001/    
+2024-02-24T11:48:21.109299Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::connect::http: connecting to [::1]:9001
+2024-02-24T11:48:21.110097Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::connect::http: connected to [::1]:9001
+2024-02-24T11:48:21.111839Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::pool: pooling idle connection for ("http", localhost:9001)
+2024-02-24T11:48:21.111866Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: State change request: Response { url: Url { scheme: "http", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("localhost")), port: Some(9001), path: "/provider-states", query: None, fragment: None }, status: 200, headers: {"date": "Sat, 24 Feb 2024 11:48:20 GMT", "server": "Kestrel", "transfer-encoding": "chunked"} }
+2024-02-24T11:48:21.111943Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: State Change: "ProviderState { name: "There is data", params: {} }" -> Ok({})
+2024-02-24T11:48:21.111952Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: Running provider verification for 'A GET Request for CreditDecision'
+2024-02-24T11:48:21.111972Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier: Verifying a HTTP interaction
+2024-02-24T11:48:21.111987Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Sending request to provider at https://localhost:44377/
+2024-02-24T11:48:21.111990Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Provider details = ProviderInfo { name: "Provider", protocol: "https", host: "localhost", port: Some(44377), path: "/", transports: [ProviderTransport { transport: "https", port: Some(44377), path: Some("/"), scheme: None }] }
+2024-02-24T11:48:21.111995Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Sending request HTTP Request ( method: GET, path: /CreditDecision, query: None, headers: None, body: Missing )
+2024-02-24T11:48:21.111998Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: body:
+
+2024-02-24T11:48:21.112032Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: reqwest::connect: starting new connection: https://localhost:44377/    
+2024-02-24T11:48:21.112612Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::connect::http: connecting to [::1]:44377
+2024-02-24T11:48:21.113363Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::connect::http: connected to [::1]:44377
+2024-02-24T11:48:21.113404Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::hs: No cached session for DnsName(DnsName(DnsName("localhost")))    
+2024-02-24T11:48:21.113456Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::hs: Not resuming any session    
+2024-02-24T11:48:21.115424Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::hs: Using ciphersuite TLS13_AES_256_GCM_SHA384    
+2024-02-24T11:48:21.115435Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::tls13: Not resuming    
+2024-02-24T11:48:21.115579Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::tls13: TLS1.3 encrypted extensions: [Protocols([6832])]    
+2024-02-24T11:48:21.115585Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: rustls::client::hs: ALPN protocol is Some(b"h2")    
+2024-02-24T11:48:21.115803Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: h2::client: binding client connection
+2024-02-24T11:48:21.115854Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: h2::client: client connection bound
+2024-02-24T11:48:21.115861Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: h2::codec::framed_write: send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384 }
+2024-02-24T11:48:21.116109Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: hyper::client::pool: pooling idle connection for ("https", localhost:44377)
+2024-02-24T11:48:21.118412Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Received native response: Response { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("localhost")), port: Some(44377), path: "/CreditDecision", query: None, fragment: None }, status: 200, headers: {"content-length": "90", "content-type": "application/json; charset=utf-8", "server": "Microsoft-IIS/10.0", "x-powered-by": "ASP.NET", "date": "Sat, 24 Feb 2024 11:48:21 GMT"} }
+2024-02-24T11:48:21.118999Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: Received response: HTTP Response ( status: 200, headers: Some({"server": ["Microsoft-IIS/10.0"], "x-powered-by": ["ASP.NET"], "date": ["Sat", "24 Feb 2024 11:48:21 GMT"], "content-type": ["application/json; charset=utf-8"], "content-length": ["90"]}), body: Present(90 bytes, application/json;charset=utf-8) )
+2024-02-24T11:48:21.119018Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_verifier::provider_client: body:
+[{"date":"2024-02-25T22:48:21.1174218+11:00","applicationScore":261,"decision":"Decline"}]
+2024-02-24T11:48:21.119034Z  INFO ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: comparing to expected response: HTTP Response ( status: 200, headers: Some({"Content-Type": ["application/json; charset=utf-8"]}), body: Present(90 bytes) )
+2024-02-24T11:48:21.119050Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: expected content type = 'application/json;charset=utf-8', actual content type = 'application/json;charset=utf-8'
+2024-02-24T11:48:21.119063Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: content type header matcher = 'RuleList { rules: [], rule_logic: And, cascaded: false }'
+2024-02-24T11:48:21.119070Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_plugin_driver::catalogue_manager: Looking for a content matcher for application/json;charset=utf-8
+2024-02-24T11:48:21.119467Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: No content matcher defined for content type 'application/json;charset=utf-8', using core matcher implementation
+2024-02-24T11:48:21.119473Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching: Using body matcher for content type 'application/json;charset=utf-8'
+2024-02-24T11:48:21.119483Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $
+2024-02-24T11:48:21.119490Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_lists: matcher defined for path '$'
+2024-02-24T11:48:21.119494Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::matchingrules: slice -> slice: comparing [serde_json::value::Value] to [serde_json::value::Value] using Type
+2024-02-24T11:48:21.119496Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::matchingrules: Comparing '[Object {"applicationScore": Number(320), "date": String("2024-02-25T08:44:54.7438282+11:00"), "decision": String("Approve")}]' to '[Object {"applicationScore": Number(261), "date": String("2024-02-25T22:48:21.1174218+11:00"), "decision": String("Decline")}]' using Type -> Ok(())
+2024-02-24T11:48:21.119518Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::matchingrules: Comparing list item 0 with value 'Some(Object {"applicationScore": Number(261), "date": String("2024-02-25T22:48:21.1174218+11:00"), "decision": String("Decline")})' to 'Object {"applicationScore": Number(320), "date": String("2024-02-25T08:44:54.7438282+11:00"), "decision": String("Approve")}'
+2024-02-24T11:48:21.119524Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $[0]
+2024-02-24T11:48:21.119526Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_maps: Comparing maps at $[0]: {"applicationScore": Number(320), "date": String("2024-02-25T08:44:54.7438282+11:00"), "decision": String("Approve")} -> {"applicationScore": Number(261), "date": String("2024-02-25T22:48:21.1174218+11:00"), "decision": String("Decline")}
+2024-02-24T11:48:21.119535Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_maps: Matcher is defined for path $[0]
+2024-02-24T11:48:21.119560Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $[0].applicationScore
+2024-02-24T11:48:21.119563Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Calling match_values for path $[0].applicationScore
+2024-02-24T11:48:21.119567Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: JSON -> JSON: Comparing '320' to '261' using Type -> Ok(())
+2024-02-24T11:48:21.119570Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Comparing 'Number(320)' to 'Number(261)' at path '$[0].applicationScore' -> Ok(())
+2024-02-24T11:48:21.119573Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $[0].date
+2024-02-24T11:48:21.119577Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Calling match_values for path $[0].date
+2024-02-24T11:48:21.119579Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: JSON -> JSON: Comparing '"2024-02-25T08:44:54.7438282+11:00"' to '"2024-02-25T22:48:21.1174218+11:00"' using Type -> Ok(())
+2024-02-24T11:48:21.119581Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Comparing 'String("2024-02-25T08:44:54.7438282+11:00")' to 'String("2024-02-25T22:48:21.1174218+11:00")' at path '$[0].date' -> Ok(())
+2024-02-24T11:48:21.119585Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare: Comparing path $[0].decision
+2024-02-24T11:48:21.119588Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Calling match_values for path $[0].decision
+2024-02-24T11:48:21.119591Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: JSON -> JSON: Comparing '"Approve"' to '"Decline"' using Type -> Ok(())
+2024-02-24T11:48:21.119593Z DEBUG ThreadId(01) verify_interaction{interaction="A GET Request for CreditDecision"}: pact_matching::json: compare_values: Comparing 'String("Approve")' to 'String("Decline")' at path '$[0].decision' -> Ok(())
+2024-02-24T11:48:21.119816Z  WARN ThreadId(01) pact_matching::metrics: 
+
+Please note:
+We are tracking events anonymously to gather important usage statistics like Pact version and operating system. To disable tracking, set the 'PACT_DO_NOT_TRACK' environment variable to 'true'.
+
+
+2024-02-24T11:48:21.119871Z DEBUG ThreadId(01) pact_matching::metrics: Sending event to GA - {"ec": "ProviderTest", "el": "Pacts verified", "aid": "pact-net", "ev": "2", "v": "1", "av": "4.5.0.0", "ds": "client", "cd2": "unknown", "cd3": "windows-x86_64", "t": "event", "cd6": "pact_ffi", "cd7": "1.0.4", "aip": "true", "cid": "6426e9c7e752fac01eda409b2be712ef", "ea": "Completed", "tid": "UA-117778936-1", "an": "pact-net"}
+2024-02-24T11:48:21.128287Z DEBUG ThreadId(01) reqwest::connect: starting new connection: https://www.google-analytics.com/    
+2024-02-24T11:48:21.138735Z DEBUG ThreadId(01) hyper::client::connect::http: connecting to 172.217.167.110:443
+2024-02-24T11:48:21.150084Z DEBUG ThreadId(01) hyper::client::connect::http: connected to 172.217.167.110:443
+2024-02-24T11:48:21.150122Z DEBUG ThreadId(01) rustls::client::hs: No cached session for DnsName(DnsName(DnsName("www.google-analytics.com")))    
+2024-02-24T11:48:21.150191Z DEBUG ThreadId(01) rustls::client::hs: Not resuming any session    
+2024-02-24T11:48:21.253197Z DEBUG ThreadId(01) rustls::client::hs: Using ciphersuite TLS13_AES_256_GCM_SHA384    
+2024-02-24T11:48:21.253212Z DEBUG ThreadId(01) rustls::client::tls13: Not resuming    
+2024-02-24T11:48:21.255261Z DEBUG ThreadId(01) rustls::client::tls13: TLS1.3 encrypted extensions: [Protocols([6832])]    
+2024-02-24T11:48:21.255276Z DEBUG ThreadId(01) rustls::client::hs: ALPN protocol is Some(b"h2")    
+2024-02-24T11:48:21.257116Z DEBUG ThreadId(01) h2::client: binding client connection
+2024-02-24T11:48:21.257139Z DEBUG ThreadId(01) h2::client: client connection bound
+2024-02-24T11:48:21.257145Z DEBUG ThreadId(01) h2::codec::framed_write: send frame=Settings { flags: (0x0), enable_push: 0, initial_window_size: 2097152, max_frame_size: 16384 }
+2024-02-24T11:48:21.257332Z DEBUG ThreadId(01) hyper::client::pool: pooling idle connection for ("https", www.google-analytics.com)
+2024-02-24T11:48:21.364831Z DEBUG ThreadId(01) pact_plugin_driver::plugin_manager: Shutting down all plugins
+
